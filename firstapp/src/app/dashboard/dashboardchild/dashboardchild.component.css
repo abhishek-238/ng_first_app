@@ -1,0 +1,21 @@
+h1{
+    padding-left: 40%;
+}
+h5{
+   top: 5%;
+}
+img{
+    margin-left: 27%;
+    margin: top -10px;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}
+#pic_nav{
+ position:absolute;
+ top:0%;
+ height:100%;
+}
+button{
+    margin-top: 5px;
+}
