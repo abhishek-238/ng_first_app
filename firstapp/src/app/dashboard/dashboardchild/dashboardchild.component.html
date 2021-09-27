@@ -2,10 +2,10 @@
     <div class="col offset-2">
         <nav class="navbar navbar-light bg-primary">
             <div class="container-fluid">
-                <h1 style="color:#fff;">Crud operations</h1>
+                <h1 style="color:#fff;">Welcome to Dashboard</h1>
                 <div class="d-flex">
-                    <button class="btn btn-danger" >log-out</button>
-                  <h5>Abhishek-dubey</h5>
+                    <button class="btn btn-danger" (click)="logout()">log-out</button>
+                  <h5>{{this.current_user?.fname}}</h5>
                  
 
                 </div>
@@ -25,4 +25,22 @@
 
         </nav>
     </div>
+</div>
+
+<div class="container" style="border: 2px solid red;">
+<app-user></app-user>
+    <!-- <table>
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+
+            </tr>
+        </thead>
+    </table> -->
 </div>

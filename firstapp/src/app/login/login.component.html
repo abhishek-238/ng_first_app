@@ -7,24 +7,34 @@
             </div>
 
             <div class="card-body">
-               <form >
+               <form (ngSubmit)="Submit()" [formGroup]="formdata">
 
                 <div class="form-group pt-3">
                     <label for="">Username/Email</label>
-                    <input type="text" class="form-control" name="Userid">
+                    <input type="text" class="form-control" name="Userid" formControlName="Userid">
+                    <div class="text-danger" *ngIf="formdata.controls.Userid.errors?.required && formdata.controls.Userid.touched">Userid is required !</div>
                 </div>
 
                 <div class="form-group pt-3">
                     <label for="">User Password</label>
-                    <input type="password" class="form-control" name="Password">
+                    <input type="password" class="form-control" name="Password" formControlName="Password">
+                    <div class="text-danger" *ngIf="formdata.controls.Password.errors?.required && formdata.controls.Password.touched">Password is required !</div>
                 </div>
 
                 <div class="form-group pt-3">
-                    <input type="submit" class="form-control btn btn-success" name="Btn">
+                    <input type="submit" class="form-control btn btn-success" name="Btn" value="login" [disabled]="!formdata.valid">
+                </div>
+
+                <div class="form-group pt-3">
+                    <div class="text-danger">
+                        {{errormessage}}
+                    </div>
                 </div>
 
                </form>
             </div>
+            <h6 style="color: brown;">New user?</h6>
+            <a href="" routerLink="/signin">Just Signin here</a>
 
         </div>
     </div>

@@ -1,0 +1,44 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Employe detail <span class="text-danger" *ngIf="edit">(# {{this.empData?.id}})</span></h2>
+                <hr>
+                <form [formGroup]="employeeDetailForm">
+                    <div class="form-group">
+                        <label for="first_name">Employee Name</label>
+                        <input type="text" class="form-control" placeholder="Employee Name"
+                        formControlName="first_name"
+                        [ngClass]="{'is-invalid' : submitted && f.first_name.errors}">
+                        <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.first_name.errors?.required">Employee Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Employee Age</label>
+                        <input type="text" class="form-control" placeholder="Employee Age"
+                        formControlName="last_name"
+                        [ngClass]="{'is-invalid' : submitted && f.last_name.errors}">
+                        <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback" [@fadeInOut]>
+                            <div *ngIf="f.last_name.errors?.required">Employee Age is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Employee Salary</label>
+                        <input type="text" class="form-control" placeholder="Employee Salary"
+                        formControlName="email"
+                        [ngClass]="{'is-invalid' : submitted && f.email.errors}">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback" [@fadeInOut]>
+                            <div *ngIf="f.email.errors?.required">Employee Salary is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" *ngIf="!edit" (click)="addEmployee()">Add Employee</button>
+                        <button class="btn btn-primary" *ngIf="edit" (click)="onClick.emit(this.employeeDetailForm.value)">Update Employee</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

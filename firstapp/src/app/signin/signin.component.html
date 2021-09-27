@@ -2,39 +2,42 @@
     <div class="col-4 offset-4">
         <div class="card">
 
-            <div class="card-header">
+            <div class="card-header bg-primary text-info">
                 <h4>Sign-in here</h4>
             </div>
 
-            <div class="card-body">
-               <form >
+            <div class="card-body bg-dark">
+               <form (ngSubmit)="submit(formd)" #formd="ngForm">
 
                 <div class="form-group pt-3">
-                    <label for="">User name</label>
-                    <input type="text" class="form-control" name="username">
+                    <input type="text" class="form-control" name="fname" aria-describedby="fname" placeholder="First name" [(ngModel)]="formdata.fname">
                 </div>
 
                 <div class="form-group pt-3">
-                    <label for="">Email Id</label>
-                    <input type="text" class="form-control" name="userid">
+                    <input type="text" class="form-control" name="lname" aria-describedby="lname" placeholder="Last name" [(ngModel)]="formdata.lname">
+                </div>
+
+
+                <div class="form-group pt-3">
+                    <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="formdata.email">
                 </div>
 
                 <div class="form-group pt-3">
-                    <label for="">Password</label>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="formdata.password">
                 </div>
 
                 <div class="form-group pt-3">
-                    <label for="">Confirm Password</label>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control" name="cpassword" placeholder="Confirm Password" [(ngModel)]="formdata.cpassword">
                 </div>
 
                 <div class="form-group pt-3">
-                    <input type="submit" class="form-control btn btn-success" name="btn" value="Sign-in">
+                    <input type="submit" class="btn btn-success"  value="Submit">
                 </div>
 
                </form>
             </div>
+            <h6 style="color: brown;">Existing user?</h6>
+            <a href="" routerLink="/login">Go to login page</a>
 
         </div>
     </div>

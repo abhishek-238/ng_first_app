@@ -7,6 +7,8 @@ import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardchildComponent } from './dashboard/dashboardchild/dashboardchild.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -15,11 +17,16 @@ import { DashboardchildComponent } from './dashboard/dashboardchild/dashboardchi
     SigninComponent,
     LoginComponent,
     DashboardComponent,
-    DashboardchildComponent
+    DashboardchildComponent,
+    
+  
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
